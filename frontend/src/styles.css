@@ -1,0 +1,53 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #e8eef2;
+    color: #2c3e50;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* weather mood backgrounds — soft, illustrative */
+.mood-sunny { background: #fef3e0; }
+.mood-cloudy { background: #e8eef2; }
+.mood-rainy { background: #d8dee8; }
+.mood-snowy { background: #eef3f6; }
+
+/* suitability badge colours */
+.badge-soft-recommended {
+    background: #d4edda;
+    color: #155724;
+}
+.badge-soft-caution {
+    background: #fef3e0;
+    color: #8b6914;
+}
+.badge-soft-notadvised {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* shared card style */
+.tw-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+}
+
+.tw-section-label {
+    font-size: 10px;
+    color: #8b95a3;
+    letter-spacing: 1px;
+}
+
+.tw-divider-top {
+    border-top: 1px solid #e8eef2;
+}
+
+.muted {
+    color: #8b95a3;
+}
