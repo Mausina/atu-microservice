@@ -16,7 +16,7 @@ async function uploadFile() {
     status.className = "info";
 
     try {
-        const res = await fetch("YOUR_API_ENDPOINT/upload-url");
+        const res = await fetch("https://bkpdnvc2w4.execute-api.eu-north-1.amazonaws.com/dev/upload-url");
         if (!res.ok) throw new Error("Failed to get upload URL");
         const data = await res.json();
 
