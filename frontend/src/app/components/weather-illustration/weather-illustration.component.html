@@ -1,0 +1,7 @@
+<div class="illust-wrap" [style.height.px]="height">
+  <img [src]="getImagePath()"
+       [alt]="weatherMain"
+       [style.height.px]="height"
+       class="illust-img"
+       (error)="onError($event)">
+</div>

@@ -1,0 +1,12 @@
+.illust-wrap {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 100%;
+}
+
+.illust-img {
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
