@@ -1,0 +1,44 @@
+<a [routerLink]="['/trail', trail.id]" class="trail-card tw-card">
+
+  <div class="illust-area" [ngClass]="moodClass">
+    <span *ngIf="suitability" class="badge-pill" [ngClass]="badgeClass">
+      {{ suitability }}
+    </span>
+    <app-weather-illustration
+      [weatherMain]="weather?.main || 'Clouds'"
+      [height]="160">
+    </app-weather-illustration>
+  </div>
+
+  <div class="info-area">
+    <div class="top-row">
+      <div>
+        <div class="temp">{{ weather ? weather.temp : '—' }}°</div>
+      </div>
+      <app-weather-icon
+        [weatherMain]="weather?.main || 'Clouds'"
+        [iconCode]="weather?.icon || ''"
+        [size]="50">
+      </app-weather-icon>
+    </div>
+
+    <div class="trail-name">{{ trail.name }}</div>
+    <div class="trail-loc muted">{{ trail.location }}</div>
+
+    <div class="stats-row tw-divider-top">
+      <div class="stat">
+        <div class="tw-section-label">DIST</div>
+        <div class="stat-val">{{ trail.distance }}km</div>
+      </div>
+      <div class="stat mid">
+        <div class="tw-section-label">ELEV</div>
+        <div class="stat-val">{{ trail.elevation }}m</div>
+      </div>
+      <div class="stat">
+        <div class="tw-section-label">LEVEL</div>
+        <div class="stat-val">{{ trail.difficulty }}</div>
+      </div>
+    </div>
+  </div>
+
+</a>

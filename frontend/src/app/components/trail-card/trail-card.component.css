@@ -1,0 +1,85 @@
+.trail-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+    height: 100%;
+}
+
+.trail-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.illust-area {
+    position: relative;
+    padding: 12px 12px 0;
+    height: 180px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.badge-pill {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.info-area {
+    padding: 16px 18px 18px;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.temp {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: #2c3e50;
+}
+
+.trail-name {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.trail-loc {
+    font-size: 11px;
+    margin-bottom: 12px;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 10px;
+    gap: 4px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat.mid {
+    border-left: 1px solid #e8eef2;
+    border-right: 1px solid #e8eef2;
+}
+
+.stat-val {
+    font-size: 13px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-top: 2px;
+}

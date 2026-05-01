@@ -1,0 +1,18 @@
+<div class="home">
+  <div class="page-head">
+    <h1>Find your next hike</h1>
+    <p class="muted">Live weather conditions for trails across Ireland.</p>
+  </div>
+
+  <app-filter-bar (filterChange)="applyFilter($event)"></app-filter-bar>
+
+  <div *ngIf="filteredTrails.length === 0" class="empty">
+    No trails match your filters.
+  </div>
+
+  <div class="grid">
+    <div *ngFor="let trail of filteredTrails" class="grid-item">
+      <app-trail-card [trail]="trail"></app-trail-card>
+    </div>
+  </div>
+</div>
