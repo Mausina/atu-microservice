@@ -1,0 +1,72 @@
+<div *ngIf="trail" class="detail-wrap">
+  <div class="trail-card tw-card">
+
+    <div class="topbar">
+      <a routerLink="/" class="back-link">
+        <i class="bi bi-arrow-left"></i> Back
+      </a>
+      <button class="save-btn"
+              (click)="save()"
+              [disabled]="saving || saved"
+              [class.saved]="saved">
+        <i class="bi" [ngClass]="saved ? 'bi-heart-fill' : 'bi-heart'"></i>
+        {{ saved ? 'Saved' : (saving ? '...' : 'Save') }}
+      </button>
+    </div>
+
+    <app-weather-banner [weather]="weather" [location]="trail.location"></app-weather-banner>
+
+    <div class="demo-panel">
+      <span class="demo-label">Preview weather:</span>
+      <button *ngFor="let m of demoModes"
+              class="demo-btn"
+              [class.active]="activeMode === m.label"
+              (click)="setDemoMode(m)">
+        {{ m.label }}
+      </button>
+    </div>
+
+    <div class="body">
+
+      <div class="top-row">
+        <div class="temp">{{ weather ? weather.temp : '—' }}°</div>
+        <app-weather-icon [iconCode]="weather?.icon || ''" [size]="64"></app-weather-icon>
+      </div>
+
+      <div class="trail-name">{{ trail.name }}</div>
+      <div class="trail-meta muted">{{ trail.location }} · {{ todayLabel }}</div>
+
+      <div *ngIf="warning" class="warning">
+        <i class="bi bi-exclamation-triangle"></i> {{ warning }}
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="tw-section-label">DISTANCE</div>
+          <div class="stat-val">{{ trail.distance }} km</div>
+        </div>
+        <div class="stat mid">
+          <div class="tw-section-label">ELEVATION</div>
+          <div class="stat-val">{{ trail.elevation }} m</div>
+        </div>
+        <div class="stat">
+          <div class="tw-section-label">DURATION</div>
+          <div class="stat-val">{{ trail.duration }}</div>
+        </div>
+      </div>
+
+      <p *ngIf="trail.description" class="desc">{{ trail.description }}</p>
+
+      <div class="tw-divider-top">
+        <app-forecast-strip [forecast]="forecast"></app-forecast-strip>
+      </div>
+
+      <div *ngIf="saveError" class="save-error">{{ saveError }}</div>
+
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!trail && !loading" class="not-found">
+  Trail not found.
+</div>

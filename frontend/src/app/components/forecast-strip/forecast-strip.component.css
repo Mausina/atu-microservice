@@ -1,0 +1,48 @@
+.forecast {
+    padding-top: 14px;
+}
+
+.mb-2 {
+    margin-bottom: 10px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 6px;
+}
+
+.day {
+    text-align: center;
+    padding: 8px 4px;
+    border-radius: 10px;
+}
+
+.day.best {
+    background: #fff8e1;
+}
+
+.dow {
+    font-size: 9px;
+    color: #8b95a3;
+    letter-spacing: 1px;
+}
+
+.best-dow {
+    color: #b8860b;
+    font-weight: 500;
+}
+
+.temp {
+    font-size: 13px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-top: 2px;
+}
+
+.best-tag {
+    font-size: 8px;
+    color: #b8860b;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}

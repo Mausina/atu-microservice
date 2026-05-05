@@ -1,0 +1,6 @@
+<div class="banner" [ngClass]="moodClass">
+  <app-weather-illustration
+    [weatherMain]="weather?.main || 'Clouds'"
+    [height]="260">
+  </app-weather-illustration>
+</div>

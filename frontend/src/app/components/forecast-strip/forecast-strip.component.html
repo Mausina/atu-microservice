@@ -1,0 +1,13 @@
+<div class="forecast">
+  <div class="tw-section-label mb-2">5-DAY FORECAST</div>
+  <div class="days">
+    <div *ngFor="let day of forecast"
+         class="day"
+         [class.best]="day.isBest">
+      <div class="dow" [class.best-dow]="day.isBest">{{ formatDay(day.date) }}</div>
+      <app-weather-icon [iconCode]="day.icon" [size]="42"></app-weather-icon>
+      <div class="temp">{{ day.temp_max }}°</div>
+      <div *ngIf="day.isBest" class="best-tag">★ BEST</div>
+    </div>
+  </div>
+</div>
