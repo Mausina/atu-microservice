@@ -1,0 +1,24 @@
+<div class="page-head">
+  <h1>Saved trails</h1>
+  <p class="muted">Trails you've bookmarked from MongoDB.</p>
+</div>
+
+<div *ngIf="loading" class="state">Loading...</div>
+
+<div *ngIf="error" class="state error">
+  Cannot connect to backend. Make sure the Express server is running.
+</div>
+
+<div *ngIf="!loading && trails.length === 0 && !error" class="state">
+  You haven't saved any trails yet.
+</div>
+
+<div class="list">
+  <div *ngFor="let t of trails" class="row tw-card">
+    <div>
+      <div class="name">{{ t.name }}</div>
+      <div class="meta muted">{{ t.location }} · {{ t.difficulty }} · {{ t.distance }}km</div>
+    </div>
+    <button class="remove-btn" (click)="remove(t._id!)">Remove</button>
+  </div>
+</div>
